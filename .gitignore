@@ -1,0 +1,18 @@
+# environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# generated data (re-create with: python scripts/generate_data.py)
+data/*.npz
+
+# large / per-run outputs
+results/predictions.csv
+results/demo_model.joblib
+results/demo_subject.png
+*.log
+results/cache/

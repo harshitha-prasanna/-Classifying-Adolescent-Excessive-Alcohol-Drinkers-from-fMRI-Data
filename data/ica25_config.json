@@ -1,0 +1,28 @@
+{
+  "n_subjects": 715,
+  "n_timepoints": 269,
+  "n_regions": 25,
+  "heavy_drinker_rate": 0.17,
+  "tr_seconds": 2.2,
+  "seed": 229,
+  "age_logodds": 1.6,
+  "male_logodds": 0.35,
+  "scanner_logodds": 0.15,
+  "network_ar": 0.85,
+  "noise_ar": 0.5,
+  "base_coupling": 1.0,
+  "coupling_subject_sd": 0.18,
+  "hd_coupling_shift": {
+    "DMN": -0.15,
+    "ECN": -0.12
+  },
+  "hd_cross_coupling": 0.12,
+  "age_coupling_slope": 0.06,
+  "hd_amplitude_boost": 0.05,
+  "scanner_noise": [
+    1.0,
+    1.25
+  ],
+  "global_signal_weight": 0.3,
+  "motion_spike_rate": 0.01
+}

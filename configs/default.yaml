@@ -1,0 +1,33 @@
+# Experiment configuration (python scripts/run_experiments.py --config configs/default.yaml)
+seed: 229
+data_dir: data
+results_dir: results
+
+# Parcellations to evaluate: ica25 (N = 25 ICA components) and craddock100 (N = 100 regions)
+parcellations: [ica25, craddock100]
+
+# Reference-study protocol: balance by undersampling, 5% dev set, 10-fold CV.
+protocol:
+  k: 10
+  dev_frac: 0.05
+  repeats: 5          # different random undersamplings of the majority class
+
+deep:
+  enabled: true
+  repeats: 1          # deep models are slow; 1 x 10 folds per architecture
+  epochs: 100
+  batch_size: 16
+  lr: 0.001
+  dropout: 0.5
+  architectures: [rnn, rnn_nn, cnn_nn, cnn_rnn, cnn_rnn_demo]
+  # control experiment: same networks, stopping rules off, fixed epoch budget
+  no_stop_architectures: [cnn_rnn, cnn_rnn_demo]
+  no_stop_epochs: 60
+  no_stop_lr: 0.003
+
+full_cohort:
+  enabled: true
+  repeats: 3
+
+permutation_test:
+  n_permutations: 200
