@@ -125,7 +125,7 @@ class DeepClassifier:
             tr_acc = self._accuracy(X, D, y)
             dv_acc = self._accuracy(X_dev, D_dev, y_dev)
             self.history_.append({"epoch": epoch, "train_acc": tr_acc, "dev_acc": dv_acc,
-                                  "loss": float(loss)})
+                                  "loss": loss.item()})
             if dv_acc > best[0]:
                 best = (dv_acc, copy.deepcopy(self.model.state_dict()), epoch)
             if self.use_rules and epoch >= self.min_epochs:
